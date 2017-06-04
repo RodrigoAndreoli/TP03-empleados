@@ -2,19 +2,20 @@ package ar.edu.unlam.pb2.empleados;
 
 import java.sql.Date;
 
-public class Empleado {
+public abstract class Empleado {
 	protected String nombre;
 	protected Double salario;
-	protected Date fechaCumpleaños;
+	protected Date fechaNacimiento;
 	protected String brindarDetalles;
+	protected final Double IMPUESTO = 0.175;
 
-	public Empleado (String nombre, Double salario, Date fecha){
+	public Empleado(String nombre, Double salario, Date fecha) {
 		this.nombre = nombre;
 		this.salario = salario;
-		this.fechaCumpleaños = fecha;
+		this.fechaNacimiento = fecha;
 		this.brindarDetalles = "Empleado nuevo";
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -31,12 +32,12 @@ public class Empleado {
 		this.salario = salario;
 	}
 
-	public Date getFechaCumpleaños() {
-		return fechaCumpleaños;
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
 	}
 
-	public void setFechaCumpleaños(Date fechaCumpleaños) {
-		this.fechaCumpleaños = fechaCumpleaños;
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	public String getBrindarDetalles() {
@@ -46,4 +47,5 @@ public class Empleado {
 	public void setBrindarDetalles(String brindarDetalles) {
 		this.brindarDetalles = brindarDetalles;
 	}
+
 }
